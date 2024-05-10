@@ -1,0 +1,89 @@
+-- Query to fetch all employees from department 10
+SELECT * FROM emp WHERE deptno = 10;
+
+-- Query to fetch all employees
+SELECT * FROM emp;
+
+-- Query to fetch department numbers and names
+SELECT deptno, dname FROM dept;
+
+-- Query to fetch employee numbers and job titles
+SELECT empno, job FROM emp;
+
+-- Query to fetch employee numbers and salaries with commission added if available
+SELECT empno, IFNULL(sal + comm, sal) FROM emp;
+
+-- Query to fetch all employees from department 10
+SELECT * FROM emp WHERE deptno = 10;
+
+-- Query to fetch employees with job title 'CLERK' and salary greater than 1000
+SELECT * FROM emp WHERE job = 'CLERK' AND sal > 1000;
+
+-- Query to fetch employee numbers and names with commission not null and greater than 0
+SELECT empno, ename FROM emp WHERE comm IS NOT NULL AND comm > 0;
+
+-- Query to fetch employee numbers, names, and commission where commission is null or 0
+SELECT empno, ename, comm FROM emp WHERE comm IS NULL OR comm = 0;
+
+-- Query to fetch employee names
+SELECT ename FROM emp;
+
+-- Query to fetch employee names with job title 'CLERK', 'ANALYST', or 'SALESMAN' and salary less than 3000
+SELECT ename FROM emp WHERE job IN ('CLERK', 'ANALYST', 'SALESMAN') AND sal < 3000;
+
+-- Query to fetch employee names starting with 'S'
+SELECT ename FROM emp WHERE ename LIKE 'S%';
+
+-- Query to fetch employee names containing 'S'
+SELECT ename FROM emp WHERE ename LIKE '%S%';
+
+-- Query to fetch employee names with second character 'A'
+SELECT ename FROM emp WHERE ename LIKE '_A%';
+
+-- Query to fetch employee names with exactly five characters
+SELECT ename FROM emp WHERE ename LIKE '_____';
+
+-- Query to fetch employee names excluding 'MANAGER' and ordered by job title
+SELECT ename FROM emp WHERE job != 'MANAGER' ORDER BY job;
+
+-- Query to count employees with job title 'CLERK'
+SELECT COUNT(*) FROM emp WHERE job = 'CLERK';
+
+-- Query to fetch employee names and job titles excluding 'CLERK', 'ANALYST', and 'SALESMAN'
+SELECT ename, job FROM emp WHERE job NOT IN ('CLERK', 'ANALYST', 'SALESMAN');
+
+-- Query to count total employees
+SELECT COUNT(ename) FROM emp;
+
+-- Query to calculate total salary of all employees
+SELECT SUM(sal) AS TOTAL_SAL FROM emp;
+
+-- Query to fetch employee name and maximum salary where job title is 'CLERK'
+SELECT ename, MAX(sal) FROM emp WHERE job = 'CLERK';
+
+-- Query to calculate average salary of employees with job title 'MANAGER'
+SELECT AVG(sal) FROM emp WHERE job = 'MANAGER';
+
+-- Query to calculate total salary of employees with job title 'ANALYST' and department number 20
+SELECT SUM(sal) FROM emp WHERE job = 'ANALYST' AND deptno = 20;
+
+-- Query to fetch job titles and department numbers of employees
+SELECT job, deptno FROM emp;
+
+-- Query to fetch employee names and salaries ordered by salary
+SELECT ename, sal FROM emp ORDER BY sal;
+
+-- Query to fetch employee names and salaries ordered by salary in descending order
+SELECT ename, sal FROM emp ORDER BY sal DESC;
+
+-- Query to fetch employee names ordered alphabetically
+SELECT ename FROM emp ORDER BY ename;
+
+-- Query to fetch employee numbers, names, and department numbers ordered by employee number
+SELECT empno, ename, deptno FROM emp ORDER BY empno;
+
+-- Query to fetch employee names and annual salaries calculated from monthly salary
+SELECT ename, (sal * 12) AS ANNUALSALARY FROM emp ORDER BY SAL * 12 DESC;
+
+-- Query to fetch all employees
+SELECT * FROM emp;
