@@ -25,8 +25,6 @@ SELECT empno, ename FROM emp WHERE comm IS NOT NULL AND comm > 0;
 -- Query to fetch employee numbers, names, and commission where commission is null or 0
 SELECT empno, ename, comm FROM emp WHERE comm IS NULL OR comm = 0;
 
--- Query to fetch employee names
-SELECT ename FROM emp;
 
 -- Query to fetch employee names with job title 'CLERK', 'ANALYST', or 'SALESMAN' and salary less than 3000
 SELECT ename FROM emp WHERE job IN ('CLERK', 'ANALYST', 'SALESMAN') AND sal < 3000;
@@ -85,5 +83,3 @@ SELECT empno, ename, deptno FROM emp ORDER BY empno;
 -- Query to fetch employee names and annual salaries calculated from monthly salary
 SELECT ename, (sal * 12) AS ANNUALSALARY FROM emp ORDER BY SAL * 12 DESC;
 
--- Query to fetch all employees
-SELECT * FROM emp;
