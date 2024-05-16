@@ -1,0 +1,89 @@
+-- Query 1: Count of Employees per Department
+SELECT deptno, COUNT(*) AS total_employees 
+FROM emp 
+GROUP BY deptno;
+
+-- Query 2: Count of Employees per Job Title
+SELECT job, COUNT(*) AS total_number_of_employees 
+FROM emp 
+GROUP BY job;
+
+-- Query 3: Total Salary per Department
+SELECT deptno, SUM(sal) AS total_salary 
+FROM emp 
+GROUP BY deptno;
+
+-- Query 4: Maximum Salary per Department
+SELECT deptno, MAX(sal) AS max_salary 
+FROM emp 
+GROUP BY deptno;
+
+-- Query 5: Total Salary per Job Title
+SELECT job, SUM(sal) AS total_salary 
+FROM emp 
+GROUP BY job;
+
+-- Query 6: Maximum Salary per Job Title
+SELECT job, MAX(sal) AS max_salary 
+FROM emp 
+GROUP BY job;
+
+-- Query 7: Departments with More Than 3 Employees
+SELECT deptno, COUNT(*) AS count 
+FROM emp 
+GROUP BY deptno 
+HAVING COUNT > 3;
+
+-- Query 8: Job Titles with Total Salary Greater Than 4000
+SELECT job, SUM(sal) AS total_salary 
+FROM emp 
+GROUP BY job 
+HAVING SUM(sal) > 4000;
+
+-- Query 9: Job Titles with More Than 3 Employees
+SELECT job, COUNT(*) AS total_number_of_employees 
+FROM emp 
+GROUP BY job 
+HAVING COUNT(*) > 3;
+
+-- Query 10: Employees with Maximum Salary by Name
+SELECT ename, MAX(sal) AS max_salary 
+FROM emp 
+GROUP BY ename 
+ORDER BY MAX(sal);
+
+-- Query 11: Employees with Maximum Salary by Job Title (Clerk)
+SELECT ename, empno, sal 
+FROM emp 
+WHERE sal = (SELECT MAX(sal) FROM emp WHERE job = 'CLERK');
+
+-- Query 12: Maximum Salary for Job Title 'Clerk'
+SELECT MAX(sal) AS max_salary 
+FROM emp 
+WHERE job = 'CLERK';
+
+-- Query 13: Employees with Salary Higher Than Maximum Salary of 'Clerk' Job Title
+SELECT ename 
+FROM emp 
+WHERE job = 'SALESMAN' AND sal > (SELECT MAX(sal) FROM emp WHERE job = 'CLERK');
+
+-- Query 14: Employees with Salary Higher Than Minimum Salary of 'Salesman' Job Title
+SELECT ename 
+FROM emp 
+WHERE job = 'CLERK' AND sal > (SELECT MIN(sal) FROM emp WHERE job = 'SALESMAN');
+
+-- Query 15: Employees with Salary Higher Than Jones or Scott
+SELECT ename 
+FROM emp 
+WHERE sal > (SELECT sal FROM emp WHERE ename = 'JONES') 
+OR sal > (SELECT sal FROM emp WHERE ename = 'SCOTT');
+
+-- Query 16: Maximum Salary for Each Job Title
+SELECT ename, job, MAX(sal) AS max_salary 
+FROM emp 
+GROUP BY job;
+
+-- Query 17: Employees with Maximum Salary for Each Department
+SELECT deptno, ename, sal 
+FROM emp 
+WHERE (deptno, sal) IN (SELECT deptno, MAX(sal) FROM emp GROUP BY deptno);
