@@ -4,5 +4,6 @@
 Before executing the queries, ensure that we have set up the sample databases. We can do this by running the provided `CREATE` and `INSERT` statements. These statements are typically found in separate SQL files named in [CREATE TABLES.SQL](https://github.com/raghavkaushik932/SQL-Proficiency-Practice/blob/main/CREATE%20TABLES.SQL)
 ` and `[INSERT TABLES.SQL](https://github.com/raghavkaushik932/SQL-Proficiency-Practice/blob/main/INSERT%20DATA.SQL)
 
-Once the databases are set up, you can use the queries provided in '[SQL_PRACTICE_QUERIES_TXT_1.txt](https://github.com/raghavkaushik932/SQL-Proficiency-Practice/blob/main/SQL_PRACTICE_QUERIES_TXT_1.txt)'.to practice SQL.
+Once the databases are set up, you can use the queries provided in '[SQL_PRACTICE_QUERIES_TXT_1.txt](https://github.com/raghavkaushik932/SQL-Proficiency-Practice/blob/main/SQL_PRACTICE_QUERIES_TXT_1.txt)'.
+'[SQL_PRACTICE_QUERIES_TXT_2.txt](https://github.com/raghavkaushik932/SQL-Proficiency-Practice/blob/main/SQL_PRACTICE_QUESRIES_TXT_2.TXT)_'.
 
